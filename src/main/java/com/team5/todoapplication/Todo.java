@@ -4,14 +4,62 @@ import java.util.Date;
 
 public class Todo {
     private String name;
-    private Date createdAt;
+    private int id;
     private boolean done;
+    private String category;
+    private String description;
+    private Date updatedAt;
+    private Date createdAt;
 
-    public Todo(String name) {
+
+    //new todo
+    public Todo(String name, int Id, String description, String category, boolean newTodo) {
         this.name = name;
-        createdAt = new Date();
+        if (newTodo ==true){
+            this.createdAt = new Date();
+        }
+        this.updatedAt = new Date();
+
         done = false;
+        this.category = category;
+        this.id = Id;
+        this.description = description;
+
     }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 
     public void changeStatus() {
         done = !done;
