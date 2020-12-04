@@ -12,21 +12,27 @@ public class Todo {
     private Date createdAt;
 
 
-    //new todo
-    public Todo(String name, int Id, String description, String category, boolean newTodo) {
+    //new todos
+    public Todo(String name,int id, String description, String category, boolean done, Date createdAt, Date updatedAt) {
         this.name = name;
-        if (newTodo ==true){
-            this.createdAt = new Date();
-        }
-        this.updatedAt = new Date();
-
-        done = false;
+        this.updatedAt = updatedAt;
+        this.createdAt = createdAt;
         this.category = category;
-        this.id = Id;
+        this.id = id;
         this.description = description;
+        this.done = done;
 
     }
+    // Update todos
+   /* public Todo(String name,int id, String description, String category, boolean done, Date updatedAt) {
+        this.name = name;
+        this.updatedAt = updatedAt;
+        this.category = category;
+        this.id = id;
+        this.description = description;
+        this.done = done;
 
+    }*/
 
     public int getId() {
         return id;
@@ -65,6 +71,12 @@ public class Todo {
         done = !done;
     }
 
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -75,5 +87,8 @@ public class Todo {
 
     public boolean getDone() {
         return done;
+    }
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }
