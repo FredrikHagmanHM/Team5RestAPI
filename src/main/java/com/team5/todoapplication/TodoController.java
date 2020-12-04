@@ -21,7 +21,7 @@ public class TodoController {
         todos.add(new Todo("Pay bills", 2, " pay the electic bill", "Economy", false, new Date(), new Date()));
         todos.add(new Todo("Buy aspirin", 3, "2 packages", "Misc", false, new Date(), new Date()));
         todos.add(new Todo("Book the dentist", 4, "Make a reservation for the kids", "Appointments", false, new Date(), new Date()));
-
+        todos.add(new Todo("Book the test", 5, "Make a reservation for the test", "Test", false, new Date(), new Date()));
 
     }
 
