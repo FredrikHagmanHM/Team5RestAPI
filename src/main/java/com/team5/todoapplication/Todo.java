@@ -1,53 +1,36 @@
 package com.team5.todoapplication;
 
-import java.util.Date;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class Todo {
-    private String name;
-    private int id;
-    private boolean done;
-    private String category;
-    private String description;
-    private Date updatedAt;
-    private Date createdAt;
+    @Id
+    String id;
+    String name;
+    String description;
+    boolean done;
 
-
-    //new todos
-    public Todo(String name,int id, String description, String category, boolean done, Date createdAt, Date updatedAt) {
-        this.name = name;
-        this.updatedAt = updatedAt;
-        this.createdAt = createdAt;
-        this.category = category;
+    public Todo(String id, String name) {
         this.id = id;
-        this.description = description;
-        this.done = done;
-
+        this.name = name;
+        this.done = false;
     }
-    // Update todos
-   /* public Todo(String name,int id, String description, String category, boolean done, Date updatedAt) {
-        this.name = name;
-        this.updatedAt = updatedAt;
-        this.category = category;
-        this.id = id;
-        this.description = description;
-        this.done = done;
 
-    }*/
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getName() {
+        return name;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -58,36 +41,10 @@ public class Todo {
         this.description = description;
     }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-
-    public void changeStatus() {
-        done = !done;
-    }
-
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public boolean getDone() {
+    public boolean isDone() {
         return done;
     }
+
     public void setDone(boolean done) {
         this.done = done;
     }
